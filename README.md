@@ -7,10 +7,10 @@ Un juego de cartas **Blackjack / 21** desarrollado con HTML, CSS y JavaScript Va
 ## 📸 Capturas de Pantalla
 
 ### Pantalla de Inicio
-![Pantalla de inicio del juego](imagenes/screenshot_inicio.jpg)
+![Pantalla de inicio del juego](imagenes/image.png)
 
 ### Resultado de Partida
-![Resultado de una partida con las cartas reveladas](imagenes/screenshot_resultado.jpg)
+![Resultado de una partida con las cartas reveladas](imagenes/imagecopy.png)
 
 ---
 
