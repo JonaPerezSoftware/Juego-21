@@ -316,91 +316,40 @@ function puntos(){
     document.getElementById("resp").innerHTML= `Las cartas del jugador son ${cartasJugador}`+"<br>"+`Las cartas de la maquina son ${cartasMaquina}` 
     document.getElementById("pedir").style.visibility = "hidden";
     document.getElementById("puntuaciones").style.visibility = "hidden";
-    document.getElementById("canvas").innerHTML = dibujarCarta(cartasJugador,cartasMaquina)
+    dibujarCarta(cartasJugador,cartasMaquina)
 
 }
 
 
 
 //mostramos las imagenes de la carta
-function dibujarCarta(cartasJugador,cartasMaquina){
-//primera carta de jugador
-    const carta1J = document.getElementById('carta1J');
+function dibujarCarta(cartasJugador, cartasMaquina) {
+    // Funcion auxiliar: muestra la carta si existe, sino oculta el elemento
+    function mostrarCarta(id, nombreCarta) {
+        const imgEl = document.getElementById(id);
+        if (!imgEl) return;
+        if (nombreCarta !== undefined && nombreCarta !== null) {
+            imgEl.src = "/imagenes/cartas/" + nombreCarta + ".svg";
+            imgEl.style.display = "inline";
+        } else {
+            imgEl.style.display = "none";
+        }
+    }
 
-    let carta1 = [
-        "/imagenes/cartas/"+cartasJugador[0]+".svg"
-    ];
-    carta1J.src = carta1
-//segunda
-    const carta2J = document.getElementById('carta2J');
+    // Cartas del jugador (hasta 7)
+    mostrarCarta('carta1J', cartasJugador[0]);
+    mostrarCarta('carta2J', cartasJugador[1]);
+    mostrarCarta('carta3J', cartasJugador[2]);
+    mostrarCarta('carta4J', cartasJugador[3]);
+    mostrarCarta('carta5J', cartasJugador[4]);
+    mostrarCarta('carta6J', cartasJugador[5]);
+    mostrarCarta('carta7J', cartasJugador[6]);
 
-    let carta2 = [
-        "/imagenes/cartas/"+cartasJugador[1]+".svg"
-    ];
-    carta2J.src = carta2
-//tercera
-    const carta3J = document.getElementById('carta3J');
-
-    let carta3 = [
-        "/imagenes/cartas/"+cartasJugador[2]+".svg"
-    ];
-    carta3J.src = carta3
-//cuarta
-    const carta4J = document.getElementById('carta4J');
-
-    let carta4 = [
-        "/imagenes/cartas/"+cartasJugador[3]+".svg"
-    ];
-    carta4J.src = carta4
-//quinta
-    const carta5J = document.getElementById('carta5J');
-
-    let carta5 = [
-        "/imagenes/cartas/"+cartasJugador[4]+".svg"
-    ];
-    carta5J.src = carta5
-//sexta
-    const carta6J = document.getElementById('carta6J');
-
-    let carta6 = [
-        "/imagenes/cartas/"+cartasJugador[5]+".svg"
-    ];
-    carta6J.src = carta6
-//septima
-    const carta7J = document.getElementById('carta7J');
-
-    let carta7 = [
-        "/imagenes/cartas/"+cartasJugador[6]+".svg"
-    ];
-    carta7J.src = carta7
-//Primera carta de la maquina
-    const carta1M = document.getElementById('carta1M');
-
-    let carta1MA = [
-        "/imagenes/cartas/"+cartasMaquina[0]+".svg"
-    ];
-    carta1M.src = carta1MA
-//Segunda carta de la maquina
-    const carta2M = document.getElementById('carta2M');
-
-    let carta2MA = [
-        "/imagenes/cartas/"+cartasMaquina[1]+".svg"
-    ];
-    carta2M.src = carta2MA
-//Tercera carta de la maquina
-    const carta3M = document.getElementById('carta3M');
-
-    let carta3MA = [
-        "/imagenes/cartas/"+cartasMaquina[2]+".svg"
-    ];
-    carta3M.src = carta3MA
-//Cuarta carta de la maquina
-    const carta4M = document.getElementById('carta4M');
-
-    let carta4MA = [
-        "/imagenes/cartas/"+cartasMaquina[3]+".svg"
-    ];
-    carta4M.src = carta4MA
+    // Cartas de la maquina (hasta 4)
+    mostrarCarta('carta1M', cartasMaquina[0]);
+    mostrarCarta('carta2M', cartasMaquina[1]);
+    mostrarCarta('carta3M', cartasMaquina[2]);
+    mostrarCarta('carta4M', cartasMaquina[3]);
 }
 
 
